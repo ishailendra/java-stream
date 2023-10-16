@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamMappingOperation {
+public class MappingOperation {
 
 	public static void mapOperation() {
 		List<Integer> nums = List.of(1,2,3,4,5,6,7,8,9,10);
@@ -22,16 +22,16 @@ public class StreamMappingOperation {
 	}
 	
 	public static void flatMapOperation() {
-		List<String> mobileBrands = List.of("Nokia", "Motrola", "Samsung");
-		List<String> laptopBrands = List.of("HP", "Dell", "ASUS"); 
+		List<String> fruits = List.of("Apple", "Banana", "Peach");
+		List<String> veg = List.of("Potato", "Cauliflower", "Cabbafe"); 
 		
-		List<List<String>> brands = List.of(mobileBrands, laptopBrands);
+		List<List<String>> brands = List.of(fruits, veg);
 		
-		List<String> brandList = brands.stream()
+		List<String> edibles = brands.stream()
 									.flatMap(Collection::stream)
 									.collect(Collectors.toList());
 		
-		System.out.println("\n\nPrinting brand list:: " + brandList);
+		System.out.println("\n\nPrinting edibles list:: " + edibles);
 	}
 	
 	public static void main(String[] args) {
